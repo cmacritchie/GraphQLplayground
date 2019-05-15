@@ -9,3 +9,6 @@ npm run json:server
  
 go to: http://localhost:4000/graphql to view graphiQL
 go to http://localhost:3000/users/ to run API, you can replace with any API.
+
+The GraphQL EcoSystem
+
