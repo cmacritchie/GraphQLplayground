@@ -10,7 +10,7 @@ class SongCreate extends Component {
             this.state = {
                 title:''
             }
-    }
+    }    
 
     onSubmit(event){
         event.preventDefault();

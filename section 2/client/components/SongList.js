@@ -8,7 +8,10 @@ class SongList extends Component {
     
     onDeleteSong(id){
         this.props.mutate({
-                variables:{ id }});
+                variables:{ id }})
+                .then(()=> this.props.data.refetch()); //automatically refetch queries associated with it
+                //use refetch when the query is associated with the specific component
+                //use the other way for queries NOT associated with the component
     }
     
     renderSongs() {
@@ -17,8 +20,10 @@ class SongList extends Component {
 
         return this.props.data.songs.map(({id, title})=>{
             return (
-                <li key={song.id} className="collection-item">
+                <li key={id} className="collection-item">
+                <Link to={`/songs/${id}`}>
                     {title}
+                    </Link>
                     <i className="material-icons"
                         onClick={()=>this.onDeleteSong(id)}>delete</i> {/*materialize library*/}
                 </li>
